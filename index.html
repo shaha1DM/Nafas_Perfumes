@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نَفَس للعطور | الرئيسية</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">🪔 نَفَس للعطور</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+            <button type="button" class="cart-btn" id="cartToggleBtn" onclick="toggleCart()" aria-label="سلة المشتريات">
+                🛒 السلة <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-label="سلة الطلبات">
+        <div class="cart-header">
+            <h3>سلة الطلبات</h3>
+            <button type="button" class="close-cart" onclick="toggleCart()" aria-label="إغلاق السلة">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">السلة فارغة حالياً.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>الإجمالي:</span>
+                <strong id="cartTotal">0 ر.س</strong>
+            </div>
+            <button type="button" class="btn cart-checkout-btn" onclick="checkoutCart()">تأكيد الطلب</button>
+        </div>
+    </aside>
+    <div class="cart-backdrop" id="cartBackdrop" onclick="toggleCart()"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>عبير الأصالة والفخامة.. في كل نفحة</h1>
+            <p>نقدم أرقى العطور الشرقية والفرنسية وأجود أنواع البخور والعود المختارة بعناية لتدوم طويلاً.</p>
+            <a href="#menu" class="btn">استكشف العطور والبخور</a>
+        </div>
+    </section>
+
+    <section id="menu" class="container">
+        <h2 class="section-title">أبرز العطور والبخور</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=500" alt="عود كمبودي معتق">
+                <h3>عود كمبودي معتق</h3>
+                <p>نفحات خشبية دافئة مع لمسة بخورية غنية مناسبة للمجالس والمناسبات الخاصة.</p>
+                <span class="price">190 ر.س</span>
+                <button class="order-btn" onclick="orderItem('عود كمبودي معتق', 190)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=500" alt="مسك أبيض نقي">
+                <h3>مسك أبيض نقي</h3>
+                <p>رائحة ناعمة ومنعشة بلمسة بودرية هادئة تمنح إحساساً بالصفاء اليومي.</p>
+                <span class="price">95 ر.س</span>
+                <button class="order-btn" onclick="orderItem('مسك أبيض نقي', 95)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500" alt="عنبر ملكي فاخر">
+                <h3>عنبر ملكي فاخر</h3>
+                <p>تركيبة شرقية دافئة متوازنة بين العنبر والراتنجات العطرية الفاخرة.</p>
+                <span class="price">165 ر.س</span>
+                <button class="order-btn" onclick="orderItem('عنبر ملكي فاخر', 165)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=500" alt="ورد طائفي أصيل">
+                <h3>ورد طائفي أصيل</h3>
+                <p>عبير زهري طبيعي مميز بنفحات الورد الطائفي العريق وثبات راقٍ.</p>
+                <span class="price">210 ر.س</span>
+                <button class="order-btn" onclick="orderItem('ورد طائفي أصيل', 210)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=500" alt="بخور معمول منزلي">
+                <h3>بخور معمول منزلي</h3>
+                <p>خلطة معمول متقنة تملأ أرجاء المنزل برائحة طيبة وهادئة تدوم طويلاً.</p>
+                <span class="price">120 ر.س</span>
+                <button class="order-btn" onclick="orderItem('بخور معمول منزلي', 120)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=500" alt="عطر أخشاب وصندل">
+                <h3>عطر أخشاب وصندل</h3>
+                <p>تناغم أنيق بين خشب الصندل الكريمي والتوابل الخفيفة لإطلالة متزنة.</p>
+                <span class="price">155 ر.س</span>
+                <button class="order-btn" onclick="orderItem('عطر أخشاب وصندل', 155)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=500" alt="عطر زهور وفانيليا">
+                <h3>عطر زهور وفانيليا</h3>
+                <p>مزيج ناعم يجمع بين رقة الأزهار البيضاء وحلاوة الفانيليا الدافئة.</p>
+                <span class="price">140 ر.س</span>
+                <button class="order-btn" onclick="orderItem('عطر زهور وفانيليا', 140)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500" alt="مبخرة سيراميك عصرية">
+                <h3>مبخرة سيراميك عصرية</h3>
+                <p>تصميم أنيق يجمع بين الطابع التراثي والبساطة العصرية لتبخير العود والمعمول.</p>
+                <span class="price">85 ر.س</span>
+                <button class="order-btn" onclick="orderItem('مبخرة سيراميك عصرية', 85)">اطلب الآن</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1519669011783-4eaa95fa1b7d?w=500" alt="مجموعة هدايا نَفَس">
+                <h3>مجموعة هدايا نَفَس</h3>
+                <p>تشكيلة مختارة من العطور والبخور في علبة أنيقة مثالية للإهداء.</p>
+                <span class="price">260 ر.س</span>
+                <button class="order-btn" onclick="orderItem('مجموعة هدايا نَفَس', 260)">اطلب الآن</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>نَفَس للعطور والبخور</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
